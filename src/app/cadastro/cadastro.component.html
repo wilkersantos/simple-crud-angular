@@ -1,0 +1,46 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+<form [formGroup]="cadastroForm" (ngSubmit)="enviar()">
+    <div class="row formGroup">
+        <div class="input-field col s6">
+            <input id="nome" type="text" class="validate" formControlName="nome">
+            <label class="active" for="nome">nome</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="cpf" type="text" class="validate" mask="000.000.000-00" formControlName="cpf">
+            <label class="active" for="nome">Cpf</label>
+        </div>
+        <div class="input-field col s3">
+            <select style="display: block;" formControlName="sexo">
+                <option value="HOMEM" selected>HOMEM</option>
+                <option value="MULHER" selected>MULHER</option>
+                <option value="OUTRO" selected>OUTRO</option>
+            </select>
+        </div> 
+    </div>
+    <div class="row form-group">
+        <div class="input-field col s3">
+            <input id="email" type="text" class="validate" formControlName="email">
+            <label class="active" for="nome">Email</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="naturalidade" type="text" class="validate" formControlName="naturalidade">
+            <label class="active" for="nome">Naturalidade</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="nacionalidade" type="text" class="validate" formControlName="nacionalidade">
+            <label class="active" for="nome">Nacionalidade</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="dataNascimento" type="text" class="validate" mask="99/99/9999" formControlName="dataNascimento"> 
+            <label class="active" for="dataNascimento">Data de Nascimento</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" row form-group">
+            <a style="cursor:pointer" (click)="enviar()" class="waves-effect waves-light btn green">Enviar</a>
+            &nbsp;
+            <a style="cursor:pointer" (click)="apagar()" *ngIf="novoCadastro === false" class="waves-effect waves-light btn red">Apagar</a>    
+        </div>
+    </div>
+</form>

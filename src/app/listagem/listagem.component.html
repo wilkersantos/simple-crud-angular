@@ -1,0 +1,19 @@
+<div class="row">
+    <table class="highlight ">
+        <thead>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            <tr style="cursor:pointer;" *ngFor="let pessoa of pessoas" (click)="clickCadastro(pessoa.cpf)">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cpf}}</td>
+                <td>{{pessoa.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <a class="btn-floating btn-large waves-effect waves-light green" (click)="clickCadastro(' ')"><i class="material-icons">add</i></a>
+</div>
